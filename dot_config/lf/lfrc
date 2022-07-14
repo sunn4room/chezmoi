@@ -1,0 +1,175 @@
+### set
+set nohidden
+set hiddenfiles ".*"
+set shell sh
+set ifs "\n"
+set nopreview
+set ratios '1'
+set noicons
+set scrolloff 5
+set info size
+set sortby natural
+set dirfirst
+set errorfmt "\033[7;31;47m %s \033[0m"
+
+### cmd
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+	case "$f" in
+		*.tar|*.tar.bz|*.tar.bz2|*.tbz|*.tbz2|*.tar.gz|*.tgz|*.tar.7z|*.t7z|*.zip|*.rar|*.jar|*.war)
+			if command -v atool >/dev/null 2>&1; then
+				atool -l "$f" | less
+				exit 0
+			fi;;
+		*.jpg|*.jpeg|*.png)
+			if command -v viu >/dev/null 2>&1; then
+				viu "$f" | less
+				exit 0
+			fi;;
+    esac
+	if ! $EDITOR "$f"; then
+		lf -remote "send $id echoerr \"open failed\""
+	fi
+}}
+
+cmd open-async &{{
+	if test -d "$f"; then
+		lf -remote "send $id echoerr \"is a directory\""
+		exit 1
+	fi
+    test -L "$f" && f=$(readlink -f $f)
+	case "$f" in
+		*.pdf)
+			if command -v zathura >/dev/null 2>&1; then
+				zathura "$f"
+				exit 0
+			fi;;
+		*.md)
+			if command -v typora >/dev/null 2>&1; then
+				typora "$f"
+				exit 0
+			fi;;
+		*.jpg|*.jpeg|*.png)
+			if command -v sxiv >/dev/null 2>&1; then
+				sxiv "$f" "$PWD"
+				exit 0
+			fi;;
+    esac
+	if ! xdg-open "$f"; then
+		lf -remote "send $id echoerr \"open failed\""
+	fi
+}}
+
+cmd extract %{{
+	if ! command -v atool >/dev/null 2>&1; then
+    	lf -remote "send $id echoerr \"atool not found\""
+		exit 1
+	fi
+	if test $# -eq 0; then
+		dir="."
+	else
+		dir="$1"
+	fi
+	if atool -X "$dir" -e $f >/dev/null 2>&1; then
+		lf -remote "send $id echomsg \"extracted\""
+	else
+    	lf -remote "send $id echoerr \"extract failed\""
+	fi
+}}
+
+cmd compress %{{
+	if ! command -v atool >/dev/null 2>&1; then
+    	lf -remote "send $id echoerr \"atool not found\""
+		exit 1
+	fi
+	if test $# -eq 0; then
+		filename="$(basename "$PWD").tar.gz"
+	else
+		filename="$1"
+	fi
+	get_files() {
+		for each_file in $fx; do
+			echo "$(basename "${each_file}")"
+		done
+	}
+	if atool -a "$filename" $(get_files) >/dev/null 2>&1; then
+    	lf -remote "send $id echomsg \"compressed\""
+	else
+    	lf -remote "send $id echoerr \"compress failed\""
+	fi
+}}
+
+cmd fzf_jump ${{
+	if ! command -v fzf >/dev/null 2>&1; then
+    	lf -remote "send $id echoerr \"fzf not found\""
+		exit 1
+	fi
+    res="$(fzf)"
+	if test $? -ne 0; then
+    	lf -remote "send $id echomsg \"fzf quit\""
+		exit 0
+	fi
+    if test -d "$res"; then
+        cmd="cd"
+    elif test -f "$res"; then
+        cmd="select"
+    else
+        exit 0
+    fi
+	if expr "$(basename "$res")" : "\." >/dev/null 2>&1; then
+		lf -remote "send $id set hidden"
+	fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd touch %{{
+	if test -n "$1"; then
+		if test -e "$1"; then
+			lf -remote "send $id echoerr \"$1 exists\""
+		else
+			if touch "$1"; then
+				lf -remote "send $id echomsg \"file $1 created\""
+			else
+				lf -remote "send $id echoerr \"touch error\""
+			fi
+		fi
+	else
+		lf -remote "send $id echoerr \"missing filename\""
+	fi
+}}	
+
+cmd mkdir %{{
+	if test -n "$1"; then
+		if test -e "$1"; then
+			lf -remote "send $id echoerr \"$1 exists\""
+		else
+			if mkdir "$1"; then
+				lf -remote "send $id echomsg \"directory $1 created\""
+			else
+				lf -remote "send $id echoerr \"mkdir error\""
+			fi
+		fi
+	else
+		lf -remote "send $id echoerr \"missing dirname\""
+	fi
+}}	
+
+### map
+map L open-async
+map K half-up
+map J half-down
+map i jump-prev
+map o jump-next
+map . set hidden!
+map d delete
+map c cut
+map P clear
+map r rename
+map x push :extract<space>
+map X push :compress<space>
+map f :fzf_jump
+map e !test -x $f && $f
+map E &test -x $f && $f
+map af push :touch<space>
+map ad push :mkdir<space>
+

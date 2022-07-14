@@ -1,1 +1,29 @@
-eval "$(starship init zsh)"
+[ -f ${HOME}/.banner ] && cat ${HOME}/.banner
+
+if [ -d ${HOME}/.oh-my-zsh ]; then
+	export ZSH=$HOME/.oh-my-zsh
+	ZSH_CUSTOM="${HOME}/.zsh-custom"
+	DISABLE_AUTO_UPDATE="true"
+	ZSH_DISABLE_COMPFIX="true"
+	ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888"
+	ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+	ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+	ZSH_AUTOSUGGEST_USE_ASYNC=1
+	ZSH_THEME="sunny"
+
+	plugins=(
+	    vi-mode
+	)
+
+	[ -d ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting ] && plugins=($plugins[@] zsh-syntax-highlighting)
+	[ -d ${ZSH_CUSTOM}/plugins/zsh-autosuggestions ] && plugins=($plugins[@] zsh-autosuggestions)
+	[ -d ${ZSH_CUSTOM}/plugins/zsh-completions ] && plugins=($plugins[@] zsh-completions)
+
+	source $ZSH/oh-my-zsh.sh
+fi
+
+bindkey '<<' beginning-of-line
+bindkey '>>' end-of-line
+
+alias h='chezmoi'
+alias f='lf'

@@ -1,0 +1,164 @@
+### system control
+alt + Escape
+	result=$(echo -en "shutdown\nrestart\nlogout\nlock\n" | rofi -dmenu -p "system" -click-to-exit); \
+	if [ x"$result" = x"shutdown" ]; then \
+		shutdown now; \
+	elif [ x"$result" = x"restart" ]; then \
+		shutdown -r now; \
+	elif [ x"$result" = x"logout" ]; then \
+		bspc quit; \
+	elif [ x"$result" = x"lock" ]; then \
+		xautolock -locknow; \
+	fi
+
+alt + r
+	pkill -USR1 -x sxhkd
+
+alt + shift + r
+	bspc wm -r
+
+### terminal
+alt + q
+	ulauncher-toggle
+
+alt + Return
+	for id in `xdotool search --classname dropdown`; do \
+		if bspc node $id.floating.sticky --flag hidden; then \
+			bspc node $id -f; \
+			exit; \
+		fi; \
+	done; \
+	alacritty --class dropdown -t dropdown &; \
+	notify-send "new dropdown"
+
+alt + shift + Return
+	alacritty
+
+alt + ctrl + Return
+	bspc node focused.floating.sticky.\!hidden --flag sticky=off && \
+	notify-send "cancel dropdown"
+
+### focus move
+alt + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+alt + {0-9}
+	bspc desktop -f {0-9}
+
+alt + {_,shift + }Tab
+	{dir=next;, dir=prev;} \
+	if bspc query -N -n focused.floating; then \
+		bspc node -f $dir.local.\!hidden.window.floating; \
+	else \
+		bspc node -f $dir.local.\!hidden.window.tiled; \
+	fi
+
+alt + ctrl + Tab
+	if bspc query -N -n focused.floating; then \
+		for id in `bspc query -N -n .local.window.\!sticky.floating.\!hidden`; do \
+			bspc node $id --flag hidden=on; \
+		done; \
+	else \
+		for id in `bspc query -N -n .local.window.\!sticky.floating.hidden`; do \
+			bspc node $id --flag hidden=off -f; \
+		done; \
+	fi
+
+alt + {n,p}
+	bspc desktop -f {next,prev}.local.occupied
+
+alt + {_,shift + }{comma,period}
+	bspc wm -h off; \
+	bspc {node,desktop} -f {older,newer}; \
+	bspc wm -h on
+
+alt + {_,shift + }slash
+	bspc {node,desktop} -f last
+
+alt + e; {k,j,h,l}
+	bspc node -f @{parent,brother,first,second}
+
+### window move
+alt + shift + {h,j,k,l}
+	{ dx=-20; dy=0  ; dir=west ; \
+	, dx=0  ; dy=20 ; dir=south; \
+	, dx=0  ; dy=-20; dir=north; \
+	, dx=20 ; dy=0  ; dir=east ; \
+	} \
+	if bspc query -N -n focused.floating; then \
+		bspc node -v $dx $dy; \
+	else \
+		bspc node -s $dir; \
+	fi
+
+### window resize
+alt + {_, shift + }bracket{left,right}
+	n=20; \
+	{t=h; edge1=right; edge2=left;, t=v; edge1=bottom; edge2=top;} \
+	{d1=-$n; d2=$n;, d1=$n; d2=-$n;} \
+	if [ $t = "h" ]; then \
+		bspc node -z $edge1 $d1 0 || bspc node -z $edge2 $d2 0; \
+	else \
+		bspc node -z $edge1 0 $d1 || bspc node -z $edge2 0 $d2; \
+	fi
+
+alt + shift + {0-9}
+	bspc node -d {0-9}
+
+### window delete
+alt + d
+	bspc node -c
+
+alt + shift + d
+	for id in `bspc query -N -n .local.window`; do \
+		bspc node $id -c; \
+	done
+
+### window state
+alt + w
+	bspc desktop -l next
+
+alt + shift + w
+	rofi -show window
+
+### preselect
+alt + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+alt + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+alt + ctrl + 0
+	bspc node -p cancel
+
+### floating
+alt + f
+	if bspc query -N -n focused.floating; then \
+		bspc node -t tiled; \ 
+		for id in `bspc query -N -n .local.window.\!sticky.floating.\!hidden`; do \
+			bspc node $id --flag hidden=on; \
+		done; \
+	else \
+		bspc node -t floating; \
+		for id in `bspc query -N -n .local.window.\!sticky.floating.hidden`; do \
+			bspc node $id --flag hidden=off; \
+		done; \
+	fi
+
+alt + s; {m,l,s,p}
+	bspc node -g {marked,locked,sticky,private}
+
+alt + c
+	copyq toggle
+
+alt + F2
+	~/.config/sxhkd/ctrl-backlight.sh up
+alt + F1
+	~/.config/sxhkd/ctrl-backlight.sh down
+alt + F4
+	~/.config/sxhkd/ctrl-audio.sh up
+alt + F3
+	~/.config/sxhkd/ctrl-audio.sh down
+alt + F5
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
