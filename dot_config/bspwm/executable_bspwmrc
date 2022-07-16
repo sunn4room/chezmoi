@@ -11,7 +11,7 @@ autostart sxhkd
 autostart nitrogen --restore
 autostart picom --experimental-backends
 autostart polybar -r
-autostart fcitx
+autostart fcitx5
 autostart xflux -l 35.5 -g 112.8
 autostart nm-applet
 autostart clipit

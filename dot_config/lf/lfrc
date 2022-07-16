@@ -26,7 +26,7 @@ cmd open ${{
 				viu "$f" | less
 				exit 0
 			fi;;
-    esac
+	esac
 	if ! $EDITOR "$f"; then
 		lf -remote "send $id echoerr \"open failed\""
 	fi
@@ -54,7 +54,7 @@ cmd open-async &{{
 				sxiv "$f" "$PWD"
 				exit 0
 			fi;;
-    esac
+	esac
 	if ! xdg-open "$f"; then
 		lf -remote "send $id echoerr \"open failed\""
 	fi
@@ -73,7 +73,7 @@ cmd extract %{{
 	if atool -X "$dir" -e $f >/dev/null 2>&1; then
 		lf -remote "send $id echomsg \"extracted\""
 	else
-    	lf -remote "send $id echoerr \"extract failed\""
+		lf -remote "send $id echoerr \"extract failed\""
 	fi
 }}
 
@@ -93,9 +93,9 @@ cmd compress %{{
 		done
 	}
 	if atool -a "$filename" $(get_files) >/dev/null 2>&1; then
-    	lf -remote "send $id echomsg \"compressed\""
+		lf -remote "send $id echomsg \"compressed\""
 	else
-    	lf -remote "send $id echoerr \"compress failed\""
+		lf -remote "send $id echoerr \"compress failed\""
 	fi
 }}
 

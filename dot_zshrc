@@ -25,5 +25,30 @@ fi
 bindkey '<<' beginning-of-line
 bindkey '>>' end-of-line
 
+if command -v nvim >/dev/null 2>&1; then
+	export EDITOR='nvim'
+elif command -v vim >/dev/null 2>&1; then
+	export EDITOR='vim'
+else
+	export EDITOR='vi'
+fi
+
+alias pbd='ping www.baidu.com'
+alias v="$EDITOR"
+alias vzsh='v ~/.zshrc'
+alias vala='v ~/.config/alacritty/alacritty.yml'
+alias vbsp='v ~/.config/bspwm/bspwmrc'
+alias vbspr='v ~/.config/bspwm/rules.sh'
+alias vsxhkd='v ~/.config/sxhkd/sxhkdrc'
+alias vlf='v ~/.config/lf/lfrc'
+alias vpicom='v ~/.config/picom.conf'
 alias h='chezmoi'
+alias hs='h status'
+alias hss='h status --exclude encrypted'
 alias f='lf'
+alias c='podman'
+alias p='pacman'
+alias s='sudo'
+alias sp='sudo pacman'
+alias sc='sudo podman'
+
