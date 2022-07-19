@@ -34,7 +34,8 @@ else
 fi
 
 alias pbd='ping www.baidu.com'
-alias v="$EDITOR"
+alias v='nvim'
+alias vv='v ~/.config/nvim/init.vim'
 alias vzsh='v ~/.zshrc'
 alias vala='v ~/.config/alacritty/alacritty.yml'
 alias vbsp='v ~/.config/bspwm/bspwmrc'

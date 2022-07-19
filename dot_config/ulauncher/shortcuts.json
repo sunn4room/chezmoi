@@ -1,0 +1,502 @@
+{
+    "6eaaa0b6-902b-4295-b726-d695ec6f953a": {
+        "id": "6eaaa0b6-902b-4295-b726-d695ec6f953a",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1639192617.7559395
+    },
+    "3615276a-b104-4acc-93d2-874d397d180f": {
+        "id": "3615276a-b104-4acc-93d2-874d397d180f",
+        "name": "Stack Overflow",
+        "keyword": "so",
+        "cmd": "https://stackoverflow.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639192617.7559614
+    },
+    "b6f3bba6-3707-4ac8-a9cc-634e3e25b638": {
+        "id": "b6f3bba6-3707-4ac8-a9cc-634e3e25b638",
+        "name": "Wikipedia",
+        "keyword": "wk",
+        "cmd": "https://en.wikipedia.org/wiki/%s",
+        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639192617.7559812
+    },
+    "1353b2e4-9e7c-4091-a259-39da23b2f3c8": {
+        "id": "1353b2e4-9e7c-4091-a259-39da23b2f3c8",
+        "name": "\u767e\u5ea6",
+        "keyword": "bd",
+        "cmd": "https://www.baidu.com/s?wd=%s",
+        "icon": null,
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1639194025.2823033
+    },
+    "dc8aacb8-a891-432d-9ec3-59923b0888b7": {
+        "id": "dc8aacb8-a891-432d-9ec3-59923b0888b7",
+        "name": "archlinux wiki",
+        "keyword": "ar",
+        "cmd": "https://wiki.archlinux.org/index.php?search=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639194789.9360678
+    },
+    "d8419a63-03da-4dc4-bba6-c78c5ea7d293": {
+        "id": "d8419a63-03da-4dc4-bba6-c78c5ea7d293",
+        "name": "bing \u56fd\u5185\u7248",
+        "keyword": "bic",
+        "cmd": "https://cn.bing.com/search?q=%s",
+        "icon": null,
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1639196146.8620384
+    },
+    "3d1f1f05-b935-4e31-97d7-b6125040246f": {
+        "id": "3d1f1f05-b935-4e31-97d7-b6125040246f",
+        "name": "\u54d4\u54e9\u54d4\u54e9",
+        "keyword": "bl",
+        "cmd": "https://search.bilibili.com/all?keyword=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639197444.6283622
+    },
+    "b71aa6ad-747e-460a-8ea6-edf283da135a": {
+        "id": "b71aa6ad-747e-460a-8ea6-edf283da135a",
+        "name": "github",
+        "keyword": "gh",
+        "cmd": "https://github.com/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639553617.1907184
+    },
+    "481eeb6c-48d1-4aab-b6db-38e9048da871": {
+        "id": "481eeb6c-48d1-4aab-b6db-38e9048da871",
+        "name": "google translate to chinese",
+        "keyword": "fyz",
+        "cmd": "https://translate.google.com/?sl=auto&tl=zh-CN&text=%s&op=translate",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639564291.4223197
+    },
+    "7796d2c2-5bba-4c07-8823-3e560e82fdd7": {
+        "id": "7796d2c2-5bba-4c07-8823-3e560e82fdd7",
+        "name": "google translate to english",
+        "keyword": "fye",
+        "cmd": "https://translate.google.com/?sl=auto&tl=en&text=%s&op=translate",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639564337.0844986
+    },
+    "021d008e-f14b-40a5-9862-093d8df0f4ac": {
+        "id": "021d008e-f14b-40a5-9862-093d8df0f4ac",
+        "name": "google cn translate to chinese",
+        "keyword": "fyzc",
+        "cmd": "https://translate.google.cn/?sl=auto&tl=zh-CN&text=%s&op=translate",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639564459.3112428
+    },
+    "3c4b5f9e-30d9-42ec-afaf-5dbab73abdca": {
+        "id": "3c4b5f9e-30d9-42ec-afaf-5dbab73abdca",
+        "name": "google cn translate to english",
+        "keyword": "fyec",
+        "cmd": "https://translate.google.cn/?sl=auto&tl=en&text=%s&op=translate",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639564499.3131428
+    },
+    "f361f4c2-0fc6-4e63-937a-6c576c8ee038": {
+        "id": "f361f4c2-0fc6-4e63-937a-6c576c8ee038",
+        "name": "npm",
+        "keyword": "npm",
+        "cmd": "https://www.npmjs.com/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639565565.0804968
+    },
+    "4dfb4193-6175-407d-90a4-e3c8899995d7": {
+        "id": "4dfb4193-6175-407d-90a4-e3c8899995d7",
+        "name": "\u8c46\u74e3",
+        "keyword": "db",
+        "cmd": "https://www.douban.com/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1639879285.3934588
+    },
+    "631ebbae-f703-4cc5-bee7-c5cae8cacda9": {
+        "id": "631ebbae-f703-4cc5-bee7-c5cae8cacda9",
+        "name": "Fast Github",
+        "keyword": "ghf",
+        "cmd": "https://hub.fastgit.xyz/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1640177379.4407063
+    },
+    "742ff2ec-b016-4b86-a446-dde97e6b4de0": {
+        "id": "742ff2ec-b016-4b86-a446-dde97e6b4de0",
+        "name": "MDN Web Docs",
+        "keyword": "mdn",
+        "cmd": "https://developer.mozilla.org/zh-CN/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1640770617.868978
+    },
+    "824f6b4b-584a-4838-8bb4-16c25ace3d68": {
+        "id": "824f6b4b-584a-4838-8bb4-16c25ace3d68",
+        "name": "Gitee",
+        "keyword": "ge",
+        "cmd": "https://search.gitee.com/?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1640857388.9120762
+    },
+    "9cf3cdd8-6568-47e4-b34c-781aa0bab304": {
+        "id": "9cf3cdd8-6568-47e4-b34c-781aa0bab304",
+        "name": "javfull",
+        "keyword": "jf",
+        "cmd": "https://javfull.net/search/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1642770018.068946
+    },
+    "b38e57c5-2c98-4d1d-b183-fdce8c6e0dd3": {
+        "id": "b38e57c5-2c98-4d1d-b183-fdce8c6e0dd3",
+        "name": "\u4eac\u4e1c",
+        "keyword": "jd",
+        "cmd": "https://search.jd.com/Search?keyword=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1643070826.0631557
+    },
+    "53028d26-16d0-4c12-9e0e-94459bcc202d": {
+        "id": "53028d26-16d0-4c12-9e0e-94459bcc202d",
+        "name": "javmost",
+        "keyword": "jm",
+        "cmd": "https://www5.javmost.com/search/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1643273157.4340894
+    },
+    "25c748a1-6090-4759-bb34-658aa9c1cc94": {
+        "id": "25c748a1-6090-4759-bb34-658aa9c1cc94",
+        "name": "javcl",
+        "keyword": "jc",
+        "cmd": "https://javcl.com/search/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1643293005.635789
+    },
+    "3a891e51-5040-459b-b9c3-b4ed792c64cb": {
+        "id": "3a891e51-5040-459b-b9c3-b4ed792c64cb",
+        "name": "Docker Hub",
+        "keyword": "dk",
+        "cmd": "https://registry.hub.docker.com/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1644577031.6572053
+    },
+    "1a01f4f6-2b59-460d-be19-9b173ebe92b9": {
+        "id": "1a01f4f6-2b59-460d-be19-9b173ebe92b9",
+        "name": "Git clone",
+        "keyword": "ghc",
+        "cmd": "https://www.gitclone.com/gogs/search/clonesearch?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1645092529.7580225
+    },
+    "a7b61d1d-ed98-45e2-8bb7-db8606eb9935": {
+        "id": "a7b61d1d-ed98-45e2-8bb7-db8606eb9935",
+        "name": "\u7f51\u6613\u4e91\u97f3\u4e50",
+        "keyword": "wyy",
+        "cmd": "https://music.163.com/#/search/m/?s=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1645182940.1502347
+    },
+    "87da6b36-5ead-4c0e-8135-1fe2da15322c": {
+        "id": "87da6b36-5ead-4c0e-8135-1fe2da15322c",
+        "name": "Stack Overflow mirror",
+        "keyword": "som",
+        "cmd": "https://so.gitclone.com/questions?search=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1645317800.083054
+    },
+    "9e301cde-173c-430e-910a-d605eed8e6e2": {
+        "id": "9e301cde-173c-430e-910a-d605eed8e6e2",
+        "name": "\u767e\u5ea6\u7ffb\u8bd1",
+        "keyword": "fy",
+        "cmd": "https://fanyi.baidu.com/#zh/en/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1645321293.6585732
+    },
+    "b19e0ecb-d7ae-431d-b0d9-8d563ac9ff42": {
+        "id": "b19e0ecb-d7ae-431d-b0d9-8d563ac9ff42",
+        "name": "\u4eca\u65e5\u5934\u6761\u641c\u7d22",
+        "keyword": "tt",
+        "cmd": "https://so.toutiao.com/search?dvpf=pc&keyword=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1645837654.834499
+    },
+    "da10f368-d9d4-4c04-865d-df6cfff12fd7": {
+        "id": "da10f368-d9d4-4c04-865d-df6cfff12fd7",
+        "name": "\u6709\u9053\u8bcd\u5178",
+        "keyword": "yd",
+        "cmd": "https://www.youdao.com/w/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1646622774.320379
+    },
+    "2334c2a7-1175-4b08-8757-6910cbce0fbc": {
+        "id": "2334c2a7-1175-4b08-8757-6910cbce0fbc",
+        "name": "Youtube",
+        "keyword": "yt",
+        "cmd": "https://www.youtube.com/results?search_query=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1646809747.5799644
+    },
+    "d2a05577-788e-4364-a7bf-9770fe26ef1c": {
+        "id": "d2a05577-788e-4364-a7bf-9770fe26ef1c",
+        "name": "Oracle Help Center",
+        "keyword": "orc",
+        "cmd": "https://docs.oracle.com/search/?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1647255705.030487
+    },
+    "91991f16-78a2-4ec9-8e97-967e0ac986cb": {
+        "id": "91991f16-78a2-4ec9-8e97-967e0ac986cb",
+        "name": "Java SE 17",
+        "keyword": "j17",
+        "cmd": "https://docs.oracle.com/search/?q=%s&category=java&product=en%2Fjava%2Fjavase%2F17",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1647255819.053864
+    },
+    "30917f07-56e0-43a2-ba25-f2482f7cf438": {
+        "id": "30917f07-56e0-43a2-ba25-f2482f7cf438",
+        "name": "Java SE 11",
+        "keyword": "j11",
+        "cmd": "https://docs.oracle.com/search/?q=%s&category=java&product=en%2Fjava%2Fjavase%2F11",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1647255838.3676784
+    },
+    "f4789289-c981-45e4-9c5e-7402918bc3a6": {
+        "id": "f4789289-c981-45e4-9c5e-7402918bc3a6",
+        "name": "Python3 Documentation",
+        "keyword": "py",
+        "cmd": "https://docs.python.org/zh-cn/3/search.html?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1647346819.7440376
+    },
+    "71fe3fdf-bc73-4b38-9a18-af5211e596f4": {
+        "id": "71fe3fdf-bc73-4b38-9a18-af5211e596f4",
+        "name": "Pypi search",
+        "keyword": "pip",
+        "cmd": "https://pypi.org/search/?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1647565927.5459325
+    },
+    "def8617c-2fe5-4a2d-8d02-5ddbf012dc1e": {
+        "id": "def8617c-2fe5-4a2d-8d02-5ddbf012dc1e",
+        "name": "\u897f\u74dc\u89c6\u9891",
+        "keyword": "xg",
+        "cmd": "https://www.ixigua.com/search/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1647913047.0297134
+    },
+    "d234c0bc-861d-458f-972a-463738f5c124": {
+        "id": "d234c0bc-861d-458f-972a-463738f5c124",
+        "name": "Chrome web store",
+        "keyword": "chr",
+        "cmd": "https://chrome.google.com/webstore/search/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1648287197.3519483
+    },
+    "55d35540-e026-47e2-9684-97c0a404526f": {
+        "id": "55d35540-e026-47e2-9684-97c0a404526f",
+        "name": "Maven Repository",
+        "keyword": "mvn",
+        "cmd": "https://mvnrepository.com/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1648448858.1506462
+    },
+    "7bc42c44-6e59-4dd8-b134-686a6ecd4e1e": {
+        "id": "7bc42c44-6e59-4dd8-b134-686a6ecd4e1e",
+        "name": "Gradle Core Plugin Document",
+        "keyword": "grdc",
+        "cmd": "https://docs.gradle.org/current/userguide/%s_plugin.html",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1648723169.6581461
+    },
+    "e500df7b-2b6f-4c6f-9920-6ec0eed978e8": {
+        "id": "e500df7b-2b6f-4c6f-9920-6ec0eed978e8",
+        "name": "Read the Docs | sunn4room",
+        "keyword": "docs",
+        "cmd": "https://sunny.readthedocs.io/en/latest/search.html?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1649161054.0933616
+    },
+    "da727df8-d2e0-45e4-bec5-4a7894660795": {
+        "id": "da727df8-d2e0-45e4-bec5-4a7894660795",
+        "name": "DownGit",
+        "keyword": "dg",
+        "cmd": "http://tool.mkblog.cn/downgit/#/home?url=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1649636854.7642386
+    },
+    "9c452535-8dc6-4e4d-8705-b2b2034fb9f7": {
+        "id": "9c452535-8dc6-4e4d-8705-b2b2034fb9f7",
+        "name": "IP address",
+        "keyword": "ip",
+        "cmd": "https://ipaddress.com/website/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1650096027.735407
+    },
+    "a40d4f5c-6893-4c3c-af2a-c05b48bbeb18": {
+        "id": "a40d4f5c-6893-4c3c-af2a-c05b48bbeb18",
+        "name": "Gitee \u5b98\u65b9\u955c\u50cf\u7ad9",
+        "keyword": "gem",
+        "cmd": "https://search.gitee.com/?q=\u7801\u4e91\u6781\u901f\u4e0b\u8f7d%2F%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1650169295.4680579
+    },
+    "95e22ee3-9788-457e-b3a4-c28b1e517368": {
+        "id": "95e22ee3-9788-457e-b3a4-c28b1e517368",
+        "name": "Gitcode",
+        "keyword": "gc",
+        "cmd": "https://gitcode.net/search?search=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1650258288.439234
+    },
+    "727419e3-faf3-4ee0-8edb-af117992df45": {
+        "id": "727419e3-faf3-4ee0-8edb-af117992df45",
+        "name": "Font Awesome",
+        "keyword": "fa",
+        "cmd": "https://fontawesome.com/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1650781759.791668
+    },
+    "dc901275-ef05-4e70-8585-4adaea7de77e": {
+        "id": "dc901275-ef05-4e70-8585-4adaea7de77e",
+        "name": "Bing \u56fd\u9645\u7248",
+        "keyword": "bi",
+        "cmd": "https://bing.com/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1650789865.8629408
+    },
+    "67dc5408-0727-4549-91f5-43103d3f0ef6": {
+        "id": "67dc5408-0727-4549-91f5-43103d3f0ef6",
+        "name": "Real Python",
+        "keyword": "rpy",
+        "cmd": "https://realpython.com/search?q=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1650965016.1481967
+    },
+    "6f641030-617f-44e2-b79c-dc68eee5b79e": {
+        "id": "6f641030-617f-44e2-b79c-dc68eee5b79e",
+        "name": "Git Clone Stackoverflow Mirror",
+        "keyword": "soc",
+        "cmd": "https://so.gitclone.com/questions?search=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1651625993.1326213
+    },
+    "d46c6e37-a143-4bb8-890a-3f554987c1a8": {
+        "id": "d46c6e37-a143-4bb8-890a-3f554987c1a8",
+        "name": "DouyuTV",
+        "keyword": "dy",
+        "cmd": "https://www.douyu.com/search/?kw=%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1652694579.5837748
+    },
+    "1738576c-2db4-45f2-b55a-3756494dcc2f": {
+        "id": "1738576c-2db4-45f2-b55a-3756494dcc2f",
+        "name": "My Project in Gitee",
+        "keyword": "gep",
+        "cmd": "https://gitee.com/snrm/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1653877591.693893
+    },
+    "0c90cdf4-5937-4e6a-9b15-d478b4bf1dfe": {
+        "id": "0c90cdf4-5937-4e6a-9b15-d478b4bf1dfe",
+        "name": "My Github Mirrors in Gitee",
+        "keyword": "gemm",
+        "cmd": "https://gitee.com/sunn4github/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1654159993.6737373
+    }
+}

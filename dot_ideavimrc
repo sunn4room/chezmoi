@@ -1,0 +1,55 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set NERDTree
+set commentary
+set ReplaceWithRegister
+set surround
+set exchange
+set easymotion
+
+""" Plugin settings -------------------------
+nnoremap gt :NERDTree<CR>
+map gs <Plug>(easymotion-s)
+
+""" Common settings -------------------------
+set showmode
+set showcmd
+set history=500
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+set number
+"set relativenumber
+set scroll
+set scrolloff=5
+set sidescroll
+set sidescrolloff=15
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+vnoremap <C-c> "+y
+vnoremap <C-x> "+d
+vnoremap <C-v> "+p
+nnoremap <C-v> "+P
+inoremap <C-v> <C-r>+
+noremap gh ^
+noremap gl $
+noremap gj <C-d>
+noremap gk <C-u>
+inoremap jj <ESC>
+nnoremap gp :bp<CR>
+nnoremap gn :bn<CR>
+nnoremap gx :bd<CR>
+nnoremap g, <C-o>
+nnoremap g. <C-i>
+map ? <Action>(QuickJavaDoc)
+map ge <Action>(GotoNextError)
+map gE <Action>(GotoPreviousError)
+map gi <Action>(GotoImplementation)

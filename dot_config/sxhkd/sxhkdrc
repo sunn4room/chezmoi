@@ -21,6 +21,9 @@ alt + shift + r
 alt + q
 	ulauncher-toggle
 
+alt + shift + q
+	rofi -show run
+
 alt + Return
 	for id in `xdotool search --classname dropdown`; do \
 		if bspc node $id.floating.sticky --flag hidden; then \
