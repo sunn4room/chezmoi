@@ -1,0 +1,18 @@
+["zsh-syntax-highlighting"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    refreshPeriod = "168h"
+    ["zsh-syntax-highlighting".clone]
+        args = ["--depth", "1"]
+["zsh-autosuggestions"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-autosuggestions.git"
+    refreshPeriod = "168h"
+    ["zsh-autosuggestions".clone]
+        args = ["--depth", "1"]
+["zsh-completions"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-completions.git"
+    refreshPeriod = "168h"
+    ["zsh-completions".clone]
+        args = ["--depth", "1"]
