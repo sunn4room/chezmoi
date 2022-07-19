@@ -1,0 +1,26 @@
+["gruvbox"]
+    type = "git-repo"
+    url = "https://github.com/morhetz/gruvbox.git"
+    ["gruvbox".clone]
+        args = ["--depth", "1"]
+["airline"]
+    type = "git-repo"
+    url = "https://github.com/vim-airline/vim-airline.git"
+    ["airline".clone]
+        args = ["--depth", "1"]
+["commentary"]
+    type = "git-repo"
+    url = "https://github.com/tpope/vim-commentary.git"
+    ["commentary".clone]
+        args = ["--depth", "1"]
+["easymotion"]
+    type = "git-repo"
+    url = "https://github.com/easymotion/vim-easymotion.git"
+    ["easymotion".clone]
+        args = ["--depth", "1"]
+["fzf"]
+    type = "git-repo"
+    url = "https://github.com/junegunn/fzf.vim.git"
+    ["fzf".clone]
+        args = ["--depth", "1"]
+
