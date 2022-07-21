@@ -41,11 +41,10 @@ alias hss='h status --exclude encrypted'
 alias p='pacman'
 alias pbd='ping www.baidu.com'
 alias r='~/sc/run'
-alias re='fn() { [ ! -f ~/sc/$1.sh ] && cp ~/sc/template.sh ~/sc/$1.sh; v ~/sc/$1.sh; }; fn'
 alias s='sudo'
 alias sc='sudo podman'
 alias sp='sudo pacman'
-alias v='nvim'
+alias v="$EDITOR"
 alias vala='v ~/.config/alacritty/alacritty.yml'
 alias vbsp='v ~/.config/bspwm/bspwmrc'
 alias vbspr='v ~/.config/bspwm/rules.sh'
@@ -55,3 +54,7 @@ alias vsxhkd='v ~/.config/sxhkd/sxhkdrc'
 alias vv='v ~/.config/nvim/init.vim'
 alias vzsh='v ~/.zshrc'
 
+re() {
+	[ ! -f ~/sc/$1.sh ] && cp ~/sc/template.sh ~/sc/$1.sh
+	v ~/sc/$1.sh
+}

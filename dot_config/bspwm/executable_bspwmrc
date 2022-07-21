@@ -8,7 +8,7 @@ function autostart() {
 	fi
 }
 autostart sxhkd
-autostart nitrogen --restore
+autostart ${HOME}/.fehbg
 autostart picom --experimental-backends
 autostart polybar -r
 autostart fcitx5
