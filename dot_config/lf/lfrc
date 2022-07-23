@@ -50,8 +50,8 @@ cmd open-async &{{
 				exit 0
 			fi;;
 		*.jpg|*.jpeg|*.png)
-			if command -v sxiv >/dev/null 2>&1; then
-				sxiv "$f" "$PWD"
+			if command -v feh >/dev/null 2>&1; then
+				feh --start-at "$f" "$PWD"
 				exit 0
 			fi;;
 	esac
