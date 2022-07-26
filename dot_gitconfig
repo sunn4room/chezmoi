@@ -9,3 +9,5 @@
 	defaultBranch = main
 [core]
 	filemode = true
+#[http]
+#	sslverify = false

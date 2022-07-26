@@ -64,6 +64,9 @@ if [ -n "$class1" ]; then
 		"VirtualBox Machine")
 			echo 'desktop=9 follow=on'
 			;;
+		"KeePassXC")
+			echo 'desktop=0 follow=on'
+			;;
 	esac
 fi
 

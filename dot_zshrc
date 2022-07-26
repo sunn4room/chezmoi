@@ -35,9 +35,38 @@ fi
 
 alias c='podman'
 alias f='lf'
+alias g='git'
+alias ga='g add'
+alias gaa='g add --all'
+alias gb='g branch'
+alias gbn='g rev-parse --abbrev-ref HEAD'
+alias gc='g clone'
+alias gcd='g clone --depth 1'
+alias gck='g checkout'
+alias gckb='g checkout -b'
+alias gcm='g commit -m'
+alias gcm-='g commit -m "-"'
+alias gcma='g commit --amend --no-edit'
+alias gl='g log --graph --abbrev-commit --pretty=format:"%C(yellow)%h%Creset: %C(green)%s %C(blue)%d%Creset%n         %cn %ce %cr"'
+alias gm='g merge'
+alias gpl='g pull'
+alias gps='g push'
+alias gr='g reset'
+alias grh='g reset --hard'
+alias grs='g reset --soft'
+alias grst='g restore'
+alias gref='g reflog'
+alias grmt='g remote'
+alias grmtl='g remote -v show'
+alias grmts='g remote set-url'
+alias gs='g status'
+alias gst='g stash'
+alias gstp='g stash pop'
 alias h='chezmoi'
 alias hs='h status'
 alias hss='h status --exclude encrypted'
+alias kpl2r='rclone copy ~/keepass.kdbx jianguoyun:/keepass/'
+alias kpr2l='rclone copy jianguoyun:/keepass/keepass.kdbx ~/'
 alias p='pacman'
 alias pbd='ping www.baidu.com'
 alias r='~/sc/run'
@@ -57,4 +86,43 @@ alias vzsh='v ~/.zshrc'
 re() {
 	[ ! -f ~/sc/$1.sh ] && cp ~/sc/template.sh ~/sc/$1.sh
 	v ~/sc/$1.sh
+}
+
+http2git() {
+	site="${1-gitee.com}"
+	url="$(git remote -v show | grep "origin" | cut -d ' ' -f 1 | cut -f 2 | head -n 1)"
+	if expr "${url}" : "https://${site}/" >/dev/null 2>&1; then
+		git remote set-url origin "git@${site}:${url#https://"${site}"/}"
+	else
+		return 1
+	fi
+}
+
+kpsync() {
+	rclone copy jianguoyun:/keepass/keepass.kdbx /tmp
+	if diff ${HOME}/keepass.kdbx /tmp/keepass.kdbx >/dev/null 2>&1; then
+		echo "no need to sync"
+		return 0
+	fi
+	m1="$(stat -c %y ${HOME}/keepass.kdbx)"
+	m1="$(date -u -d "${m1}" +%s)"
+	m2="$(rclone lsjson jianguoyun:/keepass/keepass.kdbx | jq '.[0].ModTime')"
+	m2="${m2:1:0-1}"
+	m2="$(date -u -d "${m2}" +%s)"
+	if [ "${m1}" -lt "${m2}" ]; then
+		echo "local <-- remote"
+		if ! diff ${HOME}/keepass.kdbx ${HOME}/keepass.kdbx~ >/dev/null 2>&1; then
+			return 1
+		fi
+		rclone copy jianguoyun:/keepass/keepass.kdbx ${HOME}
+		echo "done"
+	elif [ "${m1}" -gt "${m2}" ]; then
+		echo "local --> remote"
+		if ! diff /tmp/keepass.kdbx ${HOME}/keepass.kdbx~ >/dev/null 2>&1; then
+			return 1
+		fi
+		rclone copy ${HOME}/keepass.kdbx jianguoyun:/keepass
+		echo "done"
+	fi
+	cp -f ${HOME}/keepass.kdbx ${HOME}/keepass.kdbx~
 }
