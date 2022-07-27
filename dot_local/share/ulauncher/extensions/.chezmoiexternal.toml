@@ -1,6 +1,6 @@
 ["ukill"]
     type = "git-repo"
-    url = "https://github.com/isacikgoz/ukill.git"
+    url = "https://gitee.com/sunn4mirror/ukill.git"
     ["ukill".clone]
         args = ["--depth", "1"]
 ["browser-bookmarks"]

@@ -100,6 +100,10 @@ http2git() {
 
 kpsync() {
 	rclone copy jianguoyun:/keepass/keepass.kdbx /tmp
+	if [ ! -f ${HOME}/keepass.kdbx ]; then
+		cp /tmp/keepass.kdbx ${HOME}/keepass.kdbx
+		cp /tmp/keepass.kdbx ${HOME}/keepass.kdbx~
+	fi
 	if diff ${HOME}/keepass.kdbx /tmp/keepass.kdbx >/dev/null 2>&1; then
 		echo "no need to sync"
 		return 0
