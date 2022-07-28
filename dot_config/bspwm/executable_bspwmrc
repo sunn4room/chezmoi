@@ -17,8 +17,12 @@ autostart nm-applet
 autostart clipit
 autostart ulauncher --no-window
 autostart xautolock -time 10 -locker "betterlockscreen -l dim"
-if [ -f "${HOME}/mainkey.txt" ] && [ -f "${HOME}/keepass.kdbx" ]; then
-	cat "${HOME}/mainkey.txt" | autostart keepassxc --pw-stdin "${HOME}/keepass.kdbx"
+if [ -f "${HOME}/keepass.kdbx" ]; then
+	if [ -f "${HOME}/keepass.key" ]; then
+		cat "${HOME}/keepass.key" | autostart keepassxc --pw-stdin "${HOME}/keepass.kdbx"
+	else
+		autostart keepassxc "${HOME}/keepass.kdbx"
+	fi
 fi
 
 bspc monitor -d 0 1 2 3 4 5 6 7 8 9
