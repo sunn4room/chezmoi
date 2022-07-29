@@ -1,29 +1,7 @@
 #! /bin/sh
 
-function autostart() {
-	if command -v "$1" >/dev/null 2>&1; then
-		"$@" &
-	else
-		notify-send "$1 not found"
-	fi
-}
-autostart sxhkd
-autostart ${HOME}/.fehbg
-autostart picom --experimental-backends
-autostart polybar -r
-autostart fcitx5
-autostart xflux -l 35.5 -g 112.8
-autostart nm-applet
-autostart clipit
-autostart ulauncher --no-window
-autostart xautolock -time 10 -locker "betterlockscreen -l dim"
-if [ -f "${HOME}/keepass.kdbx" ]; then
-	if [ -f "${HOME}/keepass.key" ]; then
-		cat "${HOME}/keepass.key" | autostart keepassxc --pw-stdin "${HOME}/keepass.kdbx"
-	else
-		autostart keepassxc "${HOME}/keepass.kdbx"
-	fi
-fi
+xsetroot -cursor_name left_ptr
+
 
 bspc monitor -d 0 1 2 3 4 5 6 7 8 9
 bspc desktop 0 -l monocle
@@ -42,14 +20,44 @@ bspc config focused_border_color  "#78DCE8"
 bspc config urgent_border_color   "#403E41"
 bspc config presel_border_color   "#403E41"
 
-bspc config external_rules_command "${HOME}/.config/bspwm/rules.sh"
+bspc rule -a 'Alacritty:dropdown' state=floating sticky=on
+bspc rule -a 'Ulauncher' state=floating sticky=on border=off
+bspc rule -a 'Thunar' state=floating
+bspc rule -a 'Lxappearance' state=floating
+bspc rule -a 'qt5ct' state=floating
+bspc rule -a 'VirtualBox Manager' desktop=9 follow=on
+bspc rule -a 'VirtualBox Machine' desktop=9 follow=on
+bspc rule -a 'KeePassXC' desktop=0 follow=off
+bspc rule -a 'Vivaldi-stable' desktop=2 follow=on
+bspc rule -a '*:*:Task Manager - Vivaldi' state=floating
+bspc rule -a '*:*:Picture in picture' state=floating sticky=on private=on
 
 bspc subscribe node_focus | while read -r line; do
 	id=$(echo "$line" | awk '{print $4}')
 	if bspc query -N -n $id.\!floating.window; then
-		for hid in `bspc query -N -n .local.window.floating.\!hidden`; do
+		for hid in `bspc query -N -n .local.window.floating.\!hidden.\!private`; do
 			bspc node $hid --flag hidden=on
 		done
 	fi
 done &
+
+function autostart() {
+	if command -v "$1" >/dev/null 2>&1; then
+		"$@" &
+	else
+		notify-send "$1 not found"
+	fi
+}
+autostart sxhkd
+autostart ${HOME}/.fehbg
+autostart picom --experimental-backends
+autostart polybar -r
+autostart fcitx5
+autostart xflux -l 35.5 -g 112.8
+autostart nm-applet
+autostart blueman-applet
+autostart clipit
+autostart ulauncher --hide-window
+autostart xautolock -time 10 -locker "betterlockscreen -l dim"
+cat ~/keepass.key | autostart keepassxc --pw-stdin ~/keepass.kdbx
 

@@ -1,3 +1,5 @@
+[[ $- != *i* ]] && return
+
 [ -f ${HOME}/.banner ] && cat ${HOME}/.banner
 
 if [ -d ${HOME}/.oh-my-zsh ]; then

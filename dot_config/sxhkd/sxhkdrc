@@ -58,13 +58,12 @@ alt + {_,shift + }Tab
 
 alt + ctrl + Tab
 	if bspc query -N -n focused.floating; then \
-		for id in `bspc query -N -n .local.window.\!sticky.floating.\!hidden`; do \
-			bspc node $id --flag hidden=on; \
-		done; \
+		bspc node -f next.local.\!hidden.window.tiled; \
 	else \
-		for id in `bspc query -N -n .local.window.\!sticky.floating.hidden`; do \
-			bspc node $id --flag hidden=off -f; \
+		for id in `bspc query -N -n .local.window.floating.hidden`; do \
+			bspc node $id --flag hidden=off; \
 		done; \
+		bspc node -f next.local.\!hidden.window.floating; \
 	fi
 
 alt + {n,p}
@@ -113,9 +112,7 @@ alt + d
 	bspc node -c
 
 alt + shift + d
-	for id in `bspc query -N -n .local.window`; do \
-		bspc node $id -c; \
-	done
+	bspc node -k
 
 ### window state
 alt + w

@@ -1,5 +1,5 @@
 {
-   "checksum": "b7940ae409602519100b06627c82b68d",
+   "checksum": "1665b8ace7ea0f5cba7da11637ab9f75",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -624,9 +624,19 @@
                "name": "坚果云 - jianguoyun",
                "type": "url",
                "url": "https://www.jianguoyun.com/"
+            }, {
+               "date_added": "13303471885156232",
+               "guid": "15cbada4-2961-4656-b5dd-0183178bf5c6",
+               "id": "2105",
+               "meta_info": {
+                  "Description": "CSDN是全球知名中文IT技术交流平台,创建于1999年,包含原创博客、精品问答、职业培训、技术论坛、资源下载等产品服务,提供原创、优质、完整内容的专业IT技术开发社区."
+               },
+               "name": "CSDN",
+               "type": "url",
+               "url": "https://www.csdn.net/"
             } ],
             "date_added": "13296733335166436",
-            "date_modified": "13303451672084457",
+            "date_modified": "13303471885156232",
             "guid": "99e33547-f26c-4d72-9171-12c1d54249ff",
             "id": "1375",
             "name": "云端服务",
