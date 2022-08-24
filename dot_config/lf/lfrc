@@ -54,6 +54,11 @@ cmd open-async &{{
 				feh --start-at "$f" "$PWD"
 				exit 0
 			fi;;
+		*.mp4|*.mp3)
+			if command -v mpv >/dev/null 2>&1; then
+				mpv "$f"
+				exit 0
+			fi;;
 	esac
 	if ! xdg-open "$f"; then
 		lf -remote "send $id echoerr \"open failed\""
@@ -172,4 +177,7 @@ map e !test -x $f && $f
 map E &test -x $f && $f
 map af push :touch<space>
 map ad push :mkdir<space>
+map gh cd ~
+map g/ cd /
+map gd cd ~/Downloads
 

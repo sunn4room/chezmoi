@@ -1,0 +1,15 @@
+{
+  "api_version": "3",
+  "authors": "sunn4room",
+  "name": "Window Switcher",
+  "icon": "images/icon.png",
+  "instructions": "you need to install wnck3",
+  "input_debounce": 0.2,
+  "triggers": {
+    "keyword": {
+      "name": "Window Switcher",
+      "description": "switch window on x11",
+      "keyword": "w"
+    }
+  }
+}

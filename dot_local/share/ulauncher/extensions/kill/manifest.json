@@ -1,0 +1,15 @@
+{
+  "api_version": "3",
+  "authors": "sunn4room",
+  "name": "Process killer",
+  "icon": "images/icon.png",
+  "instructions": "you need to do nothing",
+  "input_debounce": 0.2,
+  "triggers": {
+    "kill": {
+      "name": "Kill process",
+      "description": "kill process use kill command",
+      "keyword": "k"
+    }
+  }
+}

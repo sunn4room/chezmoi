@@ -79,31 +79,11 @@
         "run_without_argument": false,
         "added": 1639553617.1907184
     },
-    "481eeb6c-48d1-4aab-b6db-38e9048da871": {
-        "id": "481eeb6c-48d1-4aab-b6db-38e9048da871",
-        "name": "google translate to chinese",
-        "keyword": "fyz",
-        "cmd": "https://translate.google.com/?sl=auto&tl=zh-CN&text=%s&op=translate",
-        "icon": null,
-        "is_default_search": false,
-        "run_without_argument": false,
-        "added": 1639564291.4223197
-    },
-    "7796d2c2-5bba-4c07-8823-3e560e82fdd7": {
-        "id": "7796d2c2-5bba-4c07-8823-3e560e82fdd7",
-        "name": "google translate to english",
-        "keyword": "fye",
-        "cmd": "https://translate.google.com/?sl=auto&tl=en&text=%s&op=translate",
-        "icon": null,
-        "is_default_search": false,
-        "run_without_argument": false,
-        "added": 1639564337.0844986
-    },
     "021d008e-f14b-40a5-9862-093d8df0f4ac": {
         "id": "021d008e-f14b-40a5-9862-093d8df0f4ac",
         "name": "google cn translate to chinese",
-        "keyword": "fyzc",
-        "cmd": "https://translate.google.cn/?sl=auto&tl=zh-CN&text=%s&op=translate",
+        "keyword": "zh",
+        "cmd": "https://translate.google.cn/?sl=en&tl=zh-CN&text=%s&op=translate",
         "icon": null,
         "is_default_search": false,
         "run_without_argument": false,
@@ -112,8 +92,8 @@
     "3c4b5f9e-30d9-42ec-afaf-5dbab73abdca": {
         "id": "3c4b5f9e-30d9-42ec-afaf-5dbab73abdca",
         "name": "google cn translate to english",
-        "keyword": "fyec",
-        "cmd": "https://translate.google.cn/?sl=auto&tl=en&text=%s&op=translate",
+        "keyword": "en",
+        "cmd": "https://translate.google.cn/?sl=zh-CN&tl=en&text=%s&op=translate",
         "icon": null,
         "is_default_search": false,
         "run_without_argument": false,
@@ -498,5 +478,15 @@
         "is_default_search": false,
         "run_without_argument": false,
         "added": 1654159993.6737373
+    },
+    "a920fb9f-f270-42f0-bb9c-fb094dbdf62e": {
+        "id": "a920fb9f-f270-42f0-bb9c-fb094dbdf62e",
+        "name": "Nodejs Documents",
+        "keyword": "nd",
+        "cmd": "https://cn.bing.com/search?q=site:nodejs.org/api %s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1660377557.5916557
     }
 }

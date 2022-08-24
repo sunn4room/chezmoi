@@ -1,0 +1,14 @@
+{
+  "api_version": "3",
+  "authors": "sunn4room",
+  "name": "Virtualbox",
+  "icon": "images/icon.png",
+  "instructions": "you need to install virtualbox on your computer",
+  "input_debounce": 0.2,
+  "triggers": {
+    "keyword": {
+      "name": "keyword",
+      "keyword": "vb"
+    }
+  }
+}

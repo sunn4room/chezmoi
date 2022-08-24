@@ -1,45 +1,22 @@
 ### system control
-alt + Escape
-	result=$(echo -en "shutdown\nrestart\nlogout\nlock\n" | rofi -dmenu -p "system" -click-to-exit); \
-	if [ x"$result" = x"shutdown" ]; then \
-		shutdown now; \
-	elif [ x"$result" = x"restart" ]; then \
-		shutdown -r now; \
-	elif [ x"$result" = x"logout" ]; then \
-		bspc quit; \
-	elif [ x"$result" = x"lock" ]; then \
-		xautolock -locknow; \
-	fi
-
 alt + r
 	pkill -USR1 -x sxhkd
 
 alt + shift + r
 	bspc wm -r
 
-### terminal
-alt + q
-	ulauncher-toggle
-
 alt + shift + q
 	rofi -show run
 
 alt + Return
-	for id in `xdotool search --classname dropdown`; do \
-		if bspc node $id.floating.sticky --flag hidden; then \
-			bspc node $id -f; \
-			exit; \
-		fi; \
-	done; \
-	alacritty --class dropdown -t dropdown &; \
-	notify-send "new dropdown"
+	bspc node any.window.floating.sticky.locked -g hidden || alacritty --class dropdown; \
+	bspc node any.window.floating.sticky.locked.\!hidden -f
 
 alt + shift + Return
 	alacritty
 
 alt + ctrl + Return
-	bspc node focused.floating.sticky.\!hidden --flag sticky=off && \
-	notify-send "cancel dropdown"
+	bspc node any.window.floating.sticky.locked -g sticky=off -g locked=off -g hidden=off -t tiled -f
 
 ### focus move
 alt + {h,j,k,l}
@@ -51,19 +28,19 @@ alt + {0-9}
 alt + {_,shift + }Tab
 	{dir=next;, dir=prev;} \
 	if bspc query -N -n focused.floating; then \
-		bspc node -f $dir.local.\!hidden.window.floating; \
+		bspc node -f $dir.\!hidden.window.floating; \
 	else \
 		bspc node -f $dir.local.\!hidden.window.tiled; \
 	fi
 
 alt + ctrl + Tab
 	if bspc query -N -n focused.floating; then \
-		bspc node -f next.local.\!hidden.window.tiled; \
+		bspc node -f next.local.window.tiled; \
 	else \
-		for id in `bspc query -N -n .local.window.floating.hidden`; do \
+		for id in `bspc query -N -n .window.floating.\!locked.\!private.hidden`; do \
 			bspc node $id --flag hidden=off; \
 		done; \
-		bspc node -f next.local.\!hidden.window.floating; \
+		bspc node -f next.window.\!hidden.floating; \
 	fi
 
 alt + {n,p}
@@ -118,9 +95,6 @@ alt + shift + d
 alt + w
 	bspc desktop -l next
 
-alt + shift + w
-	rofi -show window
-
 ### preselect
 alt + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
@@ -132,24 +106,17 @@ alt + ctrl + 0
 	bspc node -p cancel
 
 ### floating
-alt + f
-	if bspc query -N -n focused.floating; then \
-		bspc node -t tiled; \ 
-		for id in `bspc query -N -n .local.window.\!sticky.floating.\!hidden`; do \
-			bspc node $id --flag hidden=on; \
-		done; \
-	else \
-		bspc node -t floating; \
-		for id in `bspc query -N -n .local.window.\!sticky.floating.hidden`; do \
-			bspc node $id --flag hidden=off; \
-		done; \
-	fi
+alt + s; f
+	bspc node any.focused.window -t floating; \
+	bspc node any.focused.window -g sticky=on -g locked=off -g private=off
 
-alt + s; {m,l,s,p}
-	bspc node -g {marked,locked,sticky,private}
+alt + s; p
+	bspc node any.focused.window -t floating; \
+	bspc node any.focused.window -g sticky=on -g locked=off -g private=on
 
-alt + c
-	copyq toggle
+alt + s; t
+	bspc node any.focused.window -t tiled; \
+	bspc node any.focused.window -g sticky=off -g locked=off -g private=off
 
 alt + F2
 	~/.config/sxhkd/ctrl-backlight.sh up

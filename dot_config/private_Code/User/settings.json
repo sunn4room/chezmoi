@@ -1,0 +1,134 @@
+{
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 4,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.fontFamily": "'NotoSansMono Nerd Font', 'UbuntuMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "material-icon-theme.folders.theme": "none",
+  "redhat.telemetry.enabled": false,
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.overrideCopy": false,
+  "vim.insertModeKeyBindingsNonRecursive": [
+    { "before": ["j", "j"], "after": ["<Esc>"] },
+    { "before": ["<C-v>"], "commands": ["editor.action.clipboardPasteAction"] },
+    { "before": ["<C-c>"], "commands": ["editor.action.clipboardCopyAction"] }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<leader>", "w"], "commands": [":w"] },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    { "before": ["<C-v>"], "after": ["\"", "*", "p"] },
+    { "before": ["g", "s"], "commands": ["workbench.action.focusSideBar"] },
+    {
+      "before": ["g", "t"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
+    { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
+    { "before": ["?"], "commands": ["editor.action.showHover"] },
+    { "before": ["<C-n>"], "commands": [":nohl"] },
+    { "before": ["g", "p"], "commands": [":bp"] },
+    { "before": ["g", "x"], "commands": [":bd"] },
+    { "before": ["g", "n"], "commands": [":bn"] },
+    { "before": ["g", ","], "after": ["<C-o>"] },
+    { "before": ["g", "."], "after": ["<C-i>"] },
+    { "before": ["U"], "after": ["<C-r>"] },
+    { "before": ["g", "h"], "after": ["^"] },
+    { "before": ["g", "l"], "after": ["$"] },
+    { "before": ["g", "j"], "after": ["<C-d>"] },
+    { "before": ["g", "k"], "after": ["<C-u>"] },
+    { "before": ["g", "e"], "commands": ["editor.action.marker.nextInFiles"] },
+    { "before": ["g", "E"], "commands": ["editor.action.marker.prevInFiles"] }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatSelection"]
+    },
+    { "before": ["<C-c>"], "after": ["\"", "*", "y"] },
+    { "before": ["<C-x>"], "after": ["\"", "*", "d"] },
+    { "before": ["<C-v>"], "after": ["\"", "*", "p"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": ["g", "h"], "after": ["^"] },
+    { "before": ["g", "l"], "after": ["$"] }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-t>": false
+  },
+  "explorer.confirmDelete": false,
+  "window.restoreWindows": "none",
+  "java.maven.downloadSources": true,
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "workbench.tree.indent": 12,
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "volar.autoCompleteRefs": false,
+  "volar.codeLens.pugTools": false,
+  "volar.codeLens.scriptSetupTools": false,
+  "volar.icon.splitEditors": false,
+  "volar.preferredTagNameCase": "kebab",
+  "powermode.enabled": true,
+  "workbench.preferredLightColorTheme": "Atom One Light",
+  "workbench.preferredDarkColorTheme": "Atom One Dark",
+  "terminal.integrated.fontSize": 15,
+  "window.autoDetectColorScheme": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.rulers": [80],
+  "python.formatting.autopep8Args": ["max_line_length = 120"],
+  "window.customMenuBarAltFocus": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "window.menuBarVisibility": "hidden",
+  "powermode.shake.enabled": false,
+  "powermode.combo.location": "off"
+}

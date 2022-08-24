@@ -1,0 +1,54 @@
+{
+  "api_version": "3",
+  "authors": "sunn4room",
+  "name": "Demo",
+  "icon": "images/icon.png",
+  "instructions": "you need to do nothing",
+  "input_debounce": 0.2,
+  "triggers": {
+    "demo": {
+      "name": "demo",
+      "description": "demo",
+      "keyword": "dm"
+    }
+  },
+  "preferences": {
+    "demo1": {
+      "type": "input",
+      "name": "demo1",
+      "default_value": "demo1",
+      "description": "demo1"
+    },
+    "demo2": {
+      "type": "checkbox",
+      "name": "demo2",
+      "default_value": false,
+      "description": "demo2"
+    },
+    "demo3": {
+      "type": "number",
+      "name": "demo3",
+      "default_value": 0,
+      "min": -1,
+      "max": 1,
+      "description": "demo3"
+    },
+    "demo4": {
+      "type": "text",
+      "name": "demo4",
+      "default_value": "demo4",
+      "description": "demo4"
+    },
+    "demo5": {
+      "type": "select",
+      "name": "demo5",
+      "default_value": "select1",
+      "description": "demo5",
+      "options": [
+        "select1",
+        "select2",
+        "select3"
+	  ]
+    }
+  }
+}

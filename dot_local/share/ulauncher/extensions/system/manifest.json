@@ -1,0 +1,47 @@
+{
+  "api_version": "3",
+  "authors": "sunn4room",
+  "name": "System Control",
+  "icon": "images/icon.png",
+  "instructions": "you need to do nothing",
+  "input_debounce": 0.2,
+  "triggers": {
+    "system": {
+      "name": "system controller",
+      "keyword": "sys",
+	  "description": "control your system"
+    }
+  },
+  "preferences": {
+    "poweroff": {
+      "type": "input",
+      "name": "poweroff command",
+      "default_value": "systemctl poweroff"
+    },
+    "reboot": {
+      "type": "input",
+      "name": "reboot command",
+      "default_value": "systemctl reboot"
+    },
+    "suspend": {
+      "type": "input",
+      "name": "suspend command",
+      "default_value": "systemctl suspend"
+    },
+    "hibernate": {
+      "type": "input",
+      "name": "hibernate command",
+      "default_value": "systemctl hibernate"
+    },
+    "logout": {
+      "type": "input",
+      "name": "logout command",
+      "default_value": "logout"
+    },
+    "lock": {
+      "type": "input",
+      "name": "lock command",
+      "default_value": "lock"
+    }
+  }
+}

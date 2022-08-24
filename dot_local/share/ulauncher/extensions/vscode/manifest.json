@@ -1,0 +1,15 @@
+{
+  "api_version": "3",
+  "authors": "sunn4room",
+  "name": "Vscode Project",
+  "icon": "images/icon.png",
+  "instructions": "you need to install vscode",
+  "input_debounce": 0.2,
+  "triggers": {
+    "keyword": {
+      "name": "Vscode Project",
+	  "description": "quickly open vscode project",
+      "keyword": "vs"
+    }
+  }
+}

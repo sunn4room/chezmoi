@@ -1,0 +1,27 @@
+{
+  "api_version": "3",
+  "authors": "sunn4room",
+  "name": "Bookmarks",
+  "icon": "images/icon.png",
+  "instructions": "you need to install a browser base on chromium",
+  "input_debounce": 0.2,
+  "triggers": {
+    "keyword": {
+      "name": "Bookmark",
+      "description": "search web bookmarks",
+      "keyword": "b"
+    }
+  },
+  "preferences": {
+    "bookmark_path": {
+      "type": "select",
+      "name": "bookmarks path",
+      "default_value": "~/.config/vivaldi/Default/Bookmarks",
+      "options": [
+        "~/.config/vivaldi/Default/Bookmarks",
+        "~/.config/google-chrome/Default/Bookmarks",
+        "~/.config/microsoft-edge/Default/Bookmarks"
+	  ]
+    }
+  }
+}

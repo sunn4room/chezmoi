@@ -1,0 +1,15 @@
+{
+  "api_version": "3",
+  "authors": "sunn4room",
+  "name": "File finder",
+  "icon": "images/icon.png",
+  "instructions": "you need to install fd",
+  "input_debounce": 0.2,
+  "triggers": {
+    "find": {
+      "name": "find file",
+      "description": "find file with external command fd",
+      "keyword": "f"
+    }
+  }
+}

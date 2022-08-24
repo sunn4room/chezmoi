@@ -35,46 +35,57 @@ else
 	export EDITOR='vi'
 fi
 
-alias c='podman'
-alias f='lf'
-alias g='git'
-alias ga='g add'
-alias gaa='g add --all'
-alias gb='g branch'
-alias gbn='g rev-parse --abbrev-ref HEAD'
-alias gc='g clone'
-alias gcd='g clone --depth 1'
-alias gck='g checkout'
-alias gckb='g checkout -b'
-alias gcm='g commit -m'
-alias gcm-='g commit -m "-"'
-alias gcma='g commit --amend --no-edit'
-alias gl='g log --graph --abbrev-commit --pretty=format:"%C(yellow)%h%Creset: %C(green)%s %C(blue)%d%Creset%n         %cn %ce %cr"'
-alias gm='g merge'
-alias gpl='g pull'
-alias gps='g push'
-alias gr='g reset'
-alias grh='g reset --hard'
-alias grs='g reset --soft'
-alias grst='g restore'
-alias gref='g reflog'
-alias grmt='g remote'
-alias grmtl='g remote -v show'
-alias grmts='g remote set-url'
-alias gs='g status'
-alias gst='g stash'
-alias gstp='g stash pop'
+alias cm='podman'
+alias fm='lf'
+alias gita='gitit add'
+alias gitaa='git add --all'
+alias gitb='git branch'
+alias gitbn='git rev-parse --abbrev-ref HEAD'
+alias gitc='git clone'
+alias gitcd='git clone --depth 1'
+alias gitck='git checkout'
+alias gitckb='git checkout -b'
+alias gitcm='git commit -m'
+alias gitcm-='git commit -m "-"'
+alias gitcma='git commit --amend --no-edit'
+alias gitl='git log --graph --abbrev-commit --pretty=format:"%C(yellow)%h%Creset: %C(green)%s %C(blue)%d%Creset%n         %cn %ce %cr"'
+alias gitm='git merge'
+alias gitpl='git pull'
+alias gitps='git push'
+alias gitr='git reset'
+alias gitrh='git reset --hard'
+alias gitrs='git reset --soft'
+alias gitrst='git restore'
+alias gitref='git reflog'
+alias gitrmt='git remote'
+alias gitrmtl='git remote -v show'
+alias gitrmts='git remote set-url'
+alias gits='git status'
+alias gitst='git stash'
+alias gitstp='git stash pop'
 alias h='chezmoi'
 alias hs='h status'
 alias hss='h status --exclude encrypted'
+alias httpproxy='http_proxy=http://127.0.0.1:38457 https_proxy=http://127.0.0.1:38457'
+alias httpnoproxy='http_proxy="" https_proxy=""'
 alias kpl2r='rclone copy ~/keepass.kdbx jianguoyun:/keepass/'
 alias kpr2l='rclone copy jianguoyun:/keepass/keepass.kdbx ~/'
-alias p='pacman'
+#alias npm='pnpm'
+alias pm='sudo pacman'
+alias pma='pm -S'
+alias pmz='pm -U'
+alias pms='pm -Ss'
+alias pmss='pm -Si'
+alias pmu='pm -Sy'
+alias pmuu='pm -Syu'
+alias pmq='pm -Qs'
+alias pmqq='pm -Qi'
+alias pmqf='pm -Ql'
+alias pmd='pm -Rsn'
 alias pbd='ping www.baidu.com'
 alias r='~/sc/run'
-alias s='sudo'
-alias sc='sudo podman'
-alias sp='sudo pacman'
+alias rm='rm -r'
+alias rmf='rm -f'
 alias v="$EDITOR"
 alias vala='v ~/.config/alacritty/alacritty.yml'
 alias vbsp='v ~/.config/bspwm/bspwmrc'
@@ -91,10 +102,13 @@ re() {
 }
 
 http2git() {
-	site="${1-gitee.com}"
 	url="$(git remote -v show | grep "origin" | cut -d ' ' -f 1 | cut -f 2 | head -n 1)"
-	if expr "${url}" : "https://${site}/" >/dev/null 2>&1; then
-		git remote set-url origin "git@${site}:${url#https://"${site}"/}"
+
+	if expr "${url}" : "https://" >/dev/null 2>&1; then
+		new_url=${url#https://}
+		new_url=${new_url/\//:}
+		new_url="git@${new_url}"
+		git remote set-url origin "${new_url}"
 	else
 		return 1
 	fi
@@ -132,3 +146,16 @@ kpsync() {
 	fi
 	cp -f ${HOME}/keepass.kdbx ${HOME}/keepass.kdbx~
 }
+
+rpick() {
+	[ -z $1 ] && return 1
+	[ -z $2 ] && return 1
+	${3-xdg-open} "$(find "$1" -name "*.$2" | shuf -n1)"
+}
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$HOME/.local/bin:$PATH"
+# pnpm end
+
+export FZF_DEFAULT_COMMAND="fd -H -L --exclude={.git,.idea,.sass-cache,node_modules,build,target}"

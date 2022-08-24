@@ -2,12 +2,10 @@
 	email = sunn4room@163.com
 	name = sunn4room
 #[url "https://hub.fastgit.xyz/"]
-[url "https://gitclone.com/github.com/"]
+#[url "https://gitclone.com/github.com/"]
 #[url "https://gitcode.net/mirrors/"]
-	insteadOf = https://github.com/
+#	insteadOf = https://github.com/
 [init]
 	defaultBranch = main
 [core]
 	filemode = true
-#[http]
-#	sslverify = false

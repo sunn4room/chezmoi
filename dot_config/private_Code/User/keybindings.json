@@ -1,0 +1,15 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+2",
+        "command": "workbench.explorer.fileView.focus"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "outline.focus"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "explorer.newFile"
+    }
+]
