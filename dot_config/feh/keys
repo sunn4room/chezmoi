@@ -17,3 +17,8 @@ menu_down    j Down
 menu_up      k Up
 menu_select  space Return
 
+delete       d
+toggle_filenames t
+zoom_fill    f
+action_0     b
+

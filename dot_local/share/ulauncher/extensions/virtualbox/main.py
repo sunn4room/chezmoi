@@ -1,6 +1,6 @@
 import os
 import re
-from ulauncher.api import Extension, ExtensionResult, StoppableThread
+from ulauncher.api import AdvancedExtension, ExtensionResult
 from ulauncher.utils.desktop.notification import show_notification
 from ulauncher.api.shared.action.ActionList import ActionList
 from ulauncher.api.shared.action.CopyToClipboardAction import CopyToClipboardAction
@@ -16,7 +16,7 @@ class VMachine():
         self.name = name
         self.state = state
 
-class MainExtension(Extension):
+class MainExtension(AdvancedExtension):
 
     def __init__(self):
         super(MainExtension, self).__init__()
@@ -33,7 +33,7 @@ class MainExtension(Extension):
             id = match.group(2)
             state = vm_raw in running_vms_raw
             vms.append(VMachine(id, name, state))
-        
+
         return vms
 
     def on_input(self, input_text, trigger_id):

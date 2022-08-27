@@ -2,8 +2,7 @@ import os
 import glob
 import json
 import datetime
-from ulauncher.api import Extension, ExtensionResult, StoppableThread
-from ulauncher.utils.desktop.notification import show_notification
+from ulauncher.api import AdvancedExtension, ExtensionResult
 from ulauncher.api.shared.action.ActionList import ActionList
 from ulauncher.api.shared.action.CopyToClipboardAction import CopyToClipboardAction
 from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
@@ -12,7 +11,7 @@ from ulauncher.api.shared.action.OpenAction import OpenAction
 from ulauncher.api.shared.action.OpenUrlAction import OpenUrlAction
 from ulauncher.api.shared.action.RunScriptAction import RunScriptAction
 
-class MainExtension(Extension):
+class MainExtension(AdvancedExtension):
 
     def on_input(self, input_text, trigger_id):
         abs_path = os.path.expanduser('~/.config/Code')

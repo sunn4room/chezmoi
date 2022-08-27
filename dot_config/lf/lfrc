@@ -51,7 +51,7 @@ cmd open-async &{{
 			fi;;
 		*.jpg|*.jpeg|*.png)
 			if command -v feh >/dev/null 2>&1; then
-				feh --start-at "$f" "$PWD"
+				feh --action 'feh --bg-fill %f' -g=900x600 --scale-down --start-at "$f"
 				exit 0
 			fi;;
 		*.mp4|*.mp3)

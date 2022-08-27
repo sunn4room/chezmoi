@@ -36,6 +36,7 @@ else
 fi
 
 alias cm='podman'
+alias feh='feh --action "feh --bg-fill %f" -g=900x600 --scale-down'
 alias fm='lf'
 alias gita='gitit add'
 alias gitaa='git add --all'
@@ -90,6 +91,7 @@ alias v="$EDITOR"
 alias vala='v ~/.config/alacritty/alacritty.yml'
 alias vbsp='v ~/.config/bspwm/bspwmrc'
 alias vbspr='v ~/.config/bspwm/rules.sh'
+alias vdunst='v ~/.config/dunst/dunstrc'
 alias vlf='v ~/.config/lf/lfrc'
 alias vpicom='v ~/.config/picom.conf'
 alias vsxhkd='v ~/.config/sxhkd/sxhkdrc'

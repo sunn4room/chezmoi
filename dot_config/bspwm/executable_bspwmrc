@@ -23,6 +23,7 @@ bspc config presel_border_color   "#403E41"
 bspc rule -a 'Alacritty:dropdown' state=floating sticky=on locked=on
 bspc rule -a 'Ulauncher' state=floating sticky=on border=off
 bspc rule -a 'KeePassXC' state=floating sticky=on
+bspc rule -a 'feh' state=floating sticky=on
 bspc rule -a 'Thunar' state=floating sticky=on
 bspc rule -a 'Lxappearance' state=floating sticky=on
 bspc rule -a 'qt5ct' state=floating sticky=on
@@ -34,6 +35,7 @@ bspc rule -a 'Zathura' state=tiled desktop=4 follow=on
 bspc rule -a 'mpv' desktop=5 follow=on
 bspc rule -a '*:*:Task Manager - Vivaldi' state=floating sticky=on
 bspc rule -a '*:*:Picture in picture' state=floating sticky=on private=on
+bspc rule -a 'Zeal' state=floating sticky=on
 
 bspc subscribe node_focus | while read -r line; do
 	if bspc query -N -n .focused.window.\!floating; then
@@ -61,5 +63,6 @@ autostart blueman-applet
 autostart clipit
 autostart ulauncher --no-window
 autostart xautolock -time 10 -locker "betterlockscreen -l dim"
+autostart zeal
 cat ~/keepass.key | autostart keepassxc --pw-stdin ~/keepass.kdbx
 

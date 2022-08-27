@@ -4,8 +4,7 @@ import time
 import gi
 from gi.repository import Gtk
 from gi.repository import Wnck
-from ulauncher.api import Extension, ExtensionResult, StoppableThread
-from ulauncher.utils.desktop.notification import show_notification
+from ulauncher.api import AdvancedExtension, ExtensionResult
 from ulauncher.api.shared.action.ActionList import ActionList
 from ulauncher.api.shared.action.CopyToClipboardAction import CopyToClipboardAction
 from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
@@ -18,7 +17,7 @@ gi.require_version('Gdk', '3.0')
 gi.require_version("Gtk", "3.0")
 gi.require_version("Wnck", "3.0")
 
-class MainExtension(Extension):
+class MainExtension(AdvancedExtension):
 
     def __init__(self):
         super(MainExtension, self).__init__()

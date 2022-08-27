@@ -1,0 +1,37 @@
+{
+  "api_version": "3",
+  "authors": "sunn4room",
+  "name": "Zeal",
+  "icon": "images/icon.png",
+  "instructions": "you need to install zeal",
+  "input_debounce": 0.2,
+  "triggers": {
+    "search": {
+      "name": "Zeal search",
+      "description": "search in zeal",
+      "keyword": "d"
+    },
+    "download": {
+      "name": "Download zeal docset",
+      "description": "download zeal docset from dash",
+      "keyword": "dd"
+    }
+  },
+  "preferences": {
+    "server": {
+      "type": "select",
+      "name": "server position",
+      "default_value": "singapore",
+      "description": "where to download docset",
+      "options": [
+        "frankfurt",
+        "london",
+        "newyork",
+        "sanfrancisco",
+        "singapore",
+        "sydney",
+        "tokyo"
+      ]
+    }
+  }
+}

@@ -5,6 +5,9 @@ alt + r
 alt + shift + r
 	bspc wm -r
 
+alt + q
+	ulauncher-toggle || ulauncher -v
+
 alt + shift + q
 	rofi -show run
 
