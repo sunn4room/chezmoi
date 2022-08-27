@@ -64,5 +64,5 @@ autostart clipit
 autostart ulauncher --no-window
 autostart xautolock -time 10 -locker "betterlockscreen -l dim"
 autostart zeal
-cat ~/keepass.key | autostart keepassxc --pw-stdin ~/keepass.kdbx
+autostart keepassxc ~/keepass.kdbx
 
