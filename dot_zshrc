@@ -84,7 +84,6 @@ alias pmqq='pm -Qi'
 alias pmqf='pm -Ql'
 alias pmd='pm -Rsn'
 alias pbd='ping www.baidu.com'
-alias r='~/sc/run'
 alias rm='rm -r'
 alias rmf='rm -f'
 alias v="$EDITOR"
